@@ -6,14 +6,16 @@ class SessionsController < ApplicationController
   	@user = User.find_by(email: params[:session][:email].downcase)
   	if @user && @user.authenticate(params[:session][:password])
   		log_in @user
-  		params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
-  		redirect_to @user
+  		flash[:success] = "Logged in successfully."
+  		redirect_to root_url
   	else
-  		flash[:warning] = "Incorrect email adress and/or password."
+  		flash[:warning] = "Invalid email adress or password."
   		render 'new'
   	end
   end
 
   def destroy
+  	log_out
+  	redirect_to root_url
   end
 end
