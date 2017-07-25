@@ -1,0 +1,14 @@
+<% provide(:title, "Posts") %>
+<div>
+	<ul>
+		<% @posts.each do |post| %>
+			<li>
+				<p><%= post.title %></p>
+				<% if logged_in? %>
+					<p><%= post.user.name %></p>
+				<% end %>
+				<p><%= post.content %></p>
+			</li>
+		<% end %>
+	</ul>
+</div>
