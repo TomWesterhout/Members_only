@@ -20,6 +20,6 @@ module SessionsHelper
 
 	def log_out
 		@current_user = nil
-		cookies.delete[:remember]
+		cookies.delete(:remember)
 	end
 end
