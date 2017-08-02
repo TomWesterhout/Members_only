@@ -1,14 +1,17 @@
-<% provide(:title, "Posts") %>
-<div>
-	<ul>
-		<% @posts.each do |post| %>
-			<li>
-				<p><%= post.title %></p>
-				<% if logged_in? %>
-					<p><%= post.user.name %></p>
-				<% end %>
-				<p><%= post.content %></p>
-			</li>
-		<% end %>
-	</ul>
+<% provide(:title, "Posts") %> <!-- Provides a title to be showcased -->
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<h1>Posts</h1>
+		<ul class="posts">
+			<% @posts.each do |post| %>
+				<li>
+					<h4><%= post.title %></h4>
+					<% if logged_in? %> <!-- Only shows the name of the author when the user is logged in -->
+						<h5><%= "created by: #{post.user.name}" %></h5>
+					<% end %><
+					<p><%= post.content %></p>
+				</li>
+			<% end %>
+		</ul>
+	</div>
 </div>

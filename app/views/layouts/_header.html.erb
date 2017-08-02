@@ -1,6 +1,10 @@
 <header>
   <div class="container">
-    <%= link_to "Members Only", root_path %>
+    <nav>
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to "Members Only", root_path, id: "logo" %></li>
+      </ul>
+    </nav>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
