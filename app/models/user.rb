@@ -18,7 +18,9 @@ class User < ApplicationRecord
 	end
 
 	def remember
-		self.remember_digest == nil ? self.remember_digest = User.digest(User.new_token) : update_attribute(:remember_digest, User.digest(User.new_token))
+		self.remember_digest == nil ? 
+		self.remember_digest = User.digest(User.new_token) : 
+		update_attribute(:remember_digest, User.digest(User.new_token))
 	end
 
 	def forget
