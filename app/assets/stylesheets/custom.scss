@@ -54,16 +54,24 @@ a {
 
 /* Styling of the user posts */
 
+ul {
+	padding: 0;
+}
+
 .posts li {
   border-radius: 5px;
   border: 1px solid #D0D0D0;
   color: #fff;
   padding: 1vh;
-  margin-left: 0;
   margin-bottom: 1vh;
   list-style: none;
   h4, h5, p {
     text-align: center;
     color: #000;
   }
+}
+
+label {
+	padding-top: 1vh;
+	padding-bottom: 1vh;
 }
