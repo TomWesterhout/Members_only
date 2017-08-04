@@ -1,7 +1,9 @@
 <% provide(:title, "Posts") %> <!-- Provides a title to be showcased -->
 <div class="row">
+	<% if !logged_in? %>
+		<%= render 'posts/intro' %>
+	<% end %>
 	<div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-		<h1>Posts</h1>
 		<ul class="posts">
 			<% @posts.each do |post| %>
 				<li>
